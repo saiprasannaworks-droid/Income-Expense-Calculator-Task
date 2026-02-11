@@ -75,11 +75,21 @@ function initListeners() {
         onAddExpense();
     });
 
-    resetBtn.addEventListener("click", function (e) {
-        e.preventDefault();
+    resetBtn.addEventListener("click", function () {
+        state.transactions = [];
+        state.balance = 0;
+        state.income = 0;
+        state.expense = 0;
+        state.balanceType = "neutral";
+
+        localStorage.removeItem("expenseTrackerState");
+
         nameInput.value = "";
         amountInput.value = "";
+
+        render();
     });
+
 
 }
 
