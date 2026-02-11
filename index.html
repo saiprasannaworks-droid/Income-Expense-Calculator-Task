@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Believer's Expense Tracker </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app">
+        <h1>Believer's Expense Tracker</h1>
+        <div class="balance_container">
+            <h2>
+                Your Balance
+            </h2>
+            <div id="balance">
+                ₹ 1000
+            </div>
+        </div>
+
+        <div class="cashflow">
+
+            <div class="income_container">
+                <h3>
+                    Income
+                </h3>
+                <div id="income">
+                    ₹ 5000
+                </div>
+            </div>
+
+            <div class="expense_container">
+                <h3>
+                    Expense
+                </h3>
+                <div id="expense">
+                    ₹ 4000
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="transaction_container">
+            <h3>
+                Transaction History
+            </h3>
+            <div class="filters">
+                <label>
+                    <input type="radio" name="filter" value="all" checked />
+                    All
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="income" />
+                    Income
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="expense" />
+                    Expense
+                </label>
+            </div>
+
+            <ul id="transaction_history">
+                <!-- <li>Salary
+                    <div>
+                        <span class="Income_amount"> + ₹8000 </span>
+                        <button>X</button>
+                    </div>
+                </li>
+                <li> Groceries
+                    <div>
+                        <span class="Expense_amount"> - ₹2000 </span>
+                        <button>X</button>
+                    </div>
+                </li>
+                <li> Rent
+                    <div>
+                        <span class="Expense_amount"> - ₹3000 </span>
+                        <button>X</button>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+        <div class="form_container">
+            <h2> Add New Transaction</h2>
+            <form onsubmit="return false;" action="">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Enter Name..." autocomplete="off" />
+                <label for="amount">Amount</label>
+                <input id="amount" type="number" placeholder="Enter Number" autocomplete="off" />
+                <button id="income_btn">Add Income</button>
+                <button id="expense_btn">Add Expense</button>
+                <button id="reset_btn">Reset</button>
+
+            </form>
+        </div>
+
+
+
+    </div>
+    <script src="index.js">
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+:root {
+  --box-shadow: 0px 1px 4px 1px rgba(199, 199, 199, 0.7);
+  --income: rgb(16, 212, 16);
+  --expense: rgb(215, 15, 15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* MAIN APP WRAPPER */
+.app {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.app h1 {
+  color: #f0005c;
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #4e54c8;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: #000;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/* BALANCE */
+.balance_container {
+  margin-bottom: 20px;
+}
+
+#balance {
+
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: 600;
+
+}
+
+/* INCOME / EXPENSE BOX */
+.cashflow {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 25px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+}
+
+.income_container,
+.expense_container {
+  flex: 1;
+  text-align: center;
+}
+
+.income_container {
+  border-right: 1px solid #e0e0e0;
+}
+
+#income,
+#expense {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#income {
+  color: var(--income);
+}
+
+#expense {
+  color: var(--expense);
+}
+
+/* TRANSACTION LIST */
+.transaction_container {
+  margin-bottom: 25px;
+}
+
+#transaction_history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#transaction_history li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+#transaction_history li span {
+  color: #efefef;
+  border-radius: 3px;
+  padding: 4px 6px;
+  font-size: 0.85rem;
+  margin-right: 5px;
+}
+
+.Income_amount {
+  background-color: var(--income);
+}
+
+.Expense_amount {
+  background-color: var(--expense);
+}
+
+.text-income {
+  color: var(--income);
+}
+
+.text-expense {
+  color: var(--expense);
+}
+
+.text-neutral {
+  color: #555;
+}
+
+.transaction_container h3 {
+  color: #4e54c8;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#transaction_history li button {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+.action-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+}
+
+.action-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.edit-btn:hover,.delete-btn:hover {
+  transform: scale(1.1);  
+}
+
+
+
+/* FORM */
+.form_container {
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+}
+
+.form_container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_container label {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.form_container input {
+  height: 32px;
+  margin-bottom: 15px;
+  padding: 5px 8px;
+}
+
+.form_container button {
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+#income_btn {
+  background-color: var(--income);
+  color: #fff;
+  opacity: 0.85;
+
+}
+
+#income_btn:hover {
+  opacity: 1;
+}
+
+#expense_btn {
+  background-color: var(--expense);
+  color: #fff;
+  opacity: 0.85;
+
+}
+
+#expense_btn:hover {
+  opacity: 1;
+}
+
+#reset_btn {
+  background-color: #2f2e2e;
+  color: #fff9f9;
+  opacity: 0.85;
+}
+
+#reset_btn:hover {
+  opacity: 1;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: var(--box-shadow);
+
+}
+
+.filters label {
+  margin: 0 10px;
+  font-size: 0.9rem;
+  color: #595858;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+/* For mobile devices */
+
+@media (max-width: 480px) {
+  #transaction_history li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .action-container {
+    align-self: flex-end;
+  }
+}
+
+/* For tablets */
+@media (min-width: 768px) {
+  .app {
+    max-width: 520px;
+  }
+
+  #transaction_history li {
+    font-size: 1rem;
+  }
+}
+
+
