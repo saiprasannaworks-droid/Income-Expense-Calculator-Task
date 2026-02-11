@@ -238,21 +238,17 @@ function render() {
 
 }
 
-function onDelete(e) {
-    console.log("Delete", e.target.getAttribute("data-id"))
-    var id = e.target.getAttribute("data-id");
-    var deleteIndex;
-    for (var i = 0; i < state.transactions.length; i++) {
-        if (state.transactions[i].id === id) {
-            deleteIndex = i;
-            break;
-        }
 
-    }
-    state.transactions.splice(deleteIndex, 1);
+function onDelete(e) {
+    var id = e.target.closest("button").dataset.id;
+
+    state.transactions = state.transactions.filter(function (item) {
+        return item.id !== id;
+    });
+
     updateState();
-    render();
 }
+
 
 function onEdit(e) {
     var id = e.target.closest("button").getAttribute("data-id");
